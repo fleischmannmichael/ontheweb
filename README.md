@@ -120,13 +120,34 @@ web.
 - **`/now` last-updated date:** the `LAST_UPDATED` constant in
   `app/now/page.tsx`.
 
-## Deploying to Vercel
+## Deploying
 
-1. Push this repo to GitHub.
-2. Import it at [vercel.com/new](https://vercel.com/new).
-3. Framework preset auto-detects **Next.js** — no extra configuration needed.
-4. Deploy. Future pushes auto-deploy.
+The site is configured for **static export** (`output: "export"` in
+`next.config.mjs`), so `npm run build` emits a fully static site into `./out`
+that any static host can serve.
 
-The site is fully static (`generateStaticParams` covers all dynamic routes), so
-it also works on any static host via `next build`.
+### GitHub Pages (current setup)
+
+A workflow at `.github/workflows/deploy.yml` builds and deploys to GitHub Pages
+on every push to `main`.
+
+One-time setup in the repo:
+
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
+   (The workflow also attempts to enable this automatically.)
+2. Push to `main`. Watch the run under the **Actions** tab.
+3. The site goes live at `https://<user>.github.io/<repo>/`
+   (here: <https://fleischmannmichael.github.io/ontheweb/>).
+
+Because it's a *project* site served from `/<repo>`, the workflow builds with
+`NEXT_PUBLIC_BASE_PATH=/<repo>` so all asset and link paths are prefixed
+correctly. `public/.nojekyll` ensures the `_next` folder isn't stripped by
+Pages. If you rename the repo, the base path follows automatically (it's
+derived from the repo name in the workflow).
+
+### Vercel (alternative)
+
+Import the repo at [vercel.com/new](https://vercel.com/new); it auto-detects
+Next.js. On Vercel you don't need the base path — leave `NEXT_PUBLIC_BASE_PATH`
+unset and it serves from the domain root.
 ```
