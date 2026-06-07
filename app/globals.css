@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-slate-ink antialiased;
+    font-feature-settings: "kern", "liga", "calt";
+    line-height: 1.75;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-sans tracking-tight text-slate-ink;
+    line-height: 1.2;
+  }
+
+  a {
+    @apply transition-colors duration-150 ease-in-out;
+  }
+
+  /* Inline code outside of prose blocks. */
+  code {
+    @apply font-mono text-[0.9em];
+  }
+}
+
+@layer components {
+  .link-accent {
+    @apply text-accent hover:text-accent-hover underline-offset-4 hover:underline;
+  }
+}
