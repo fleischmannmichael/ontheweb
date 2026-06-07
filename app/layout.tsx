@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "@/components/NavBar";
@@ -31,6 +31,12 @@ export const metadata: Metadata = {
     siteName: site.name,
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#FAF8F4",
 };
 
 export default function RootLayout({

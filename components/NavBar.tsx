@@ -8,6 +8,7 @@ import { navLinks, site } from "@/lib/site";
 export function NavBar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -16,10 +17,30 @@ export function NavBar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close the mobile menu whenever the route changes.
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  // Lock body scroll while the mobile menu is open.
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  const links = navLinks.filter((link) => link.href !== "/");
+
+  const isActive = (href: string) =>
+    pathname === href || (href !== "/" && pathname.startsWith(href));
+
   return (
     <header
       className={`sticky top-0 z-50 bg-cream/80 backdrop-blur transition-colors duration-150 ${
-        scrolled ? "border-b border-line" : "border-b border-transparent"
+        scrolled || menuOpen
+          ? "border-b border-line"
+          : "border-b border-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-content items-center justify-between px-5 py-4 sm:px-6">
@@ -29,28 +50,74 @@ export function NavBar() {
         >
           <span className="text-accent">$</span> {site.name.toLowerCase()}
         </Link>
-        <ul className="flex items-center gap-4 text-sm sm:gap-5">
-          {navLinks
-            .filter((link) => link.href !== "/")
-            .map((link) => {
-              const active =
-                pathname === link.href ||
-                (link.href !== "/" && pathname.startsWith(link.href));
-              return (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className={`transition-colors duration-150 hover:text-accent ${
-                      active ? "text-accent" : "text-slate-ink/70"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              );
-            })}
+
+        {/* Desktop / tablet links */}
+        <ul className="hidden items-center gap-5 text-sm sm:flex">
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={`transition-colors duration-150 hover:text-accent ${
+                  isActive(link.href) ? "text-accent" : "text-slate-ink/70"
+                }`}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </ul>
+
+        {/* Mobile toggle */}
+        <button
+          type="button"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setMenuOpen((open) => !open)}
+          className="-mr-2 inline-flex h-10 w-10 items-center justify-center rounded-md text-slate-ink/70 transition-colors duration-150 hover:text-accent sm:hidden"
+        >
+          <span className="relative block h-4 w-5">
+            <span
+              className={`absolute left-0 block h-0.5 w-5 bg-current transition-all duration-150 ${
+                menuOpen ? "top-1.5 rotate-45" : "top-0"
+              }`}
+            />
+            <span
+              className={`absolute left-0 top-1.5 block h-0.5 w-5 bg-current transition-opacity duration-150 ${
+                menuOpen ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`absolute left-0 block h-0.5 w-5 bg-current transition-all duration-150 ${
+                menuOpen ? "top-1.5 -rotate-45" : "top-3"
+              }`}
+            />
+          </span>
+        </button>
       </nav>
+
+      {/* Mobile menu panel */}
+      {menuOpen && (
+        <div
+          id="mobile-menu"
+          className="animate-fade-in border-t border-line sm:hidden"
+        >
+          <ul className="mx-auto flex max-w-content flex-col px-5 py-2">
+            {links.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`block py-3 text-base transition-colors duration-150 hover:text-accent ${
+                    isActive(link.href) ? "text-accent" : "text-slate-ink/80"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
   );
 }

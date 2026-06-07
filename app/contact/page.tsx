@@ -41,12 +41,12 @@ export default function ContactPage() {
               {...(link.external
                 ? { target: "_blank", rel: "noreferrer" }
                 : {})}
-              className="group flex items-baseline justify-between rounded-lg border border-line px-5 py-4 transition-colors duration-150 hover:border-accent/50"
+              className="group flex flex-col gap-1 rounded-lg border border-line px-5 py-4 transition-colors duration-150 hover:border-accent/50 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
             >
               <span className="text-lg font-medium text-slate-ink group-hover:text-accent">
                 {link.label}
               </span>
-              <span className="font-mono text-sm text-slate-ink/50 group-hover:text-accent">
+              <span className="break-all font-mono text-sm text-slate-ink/50 group-hover:text-accent sm:break-normal sm:text-right">
                 {link.value} →
               </span>
             </a>

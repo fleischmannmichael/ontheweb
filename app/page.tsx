@@ -29,7 +29,7 @@ export default function HomePage() {
       {/* Featured projects */}
       {featured.length > 0 && (
         <section className="space-y-5">
-          <div className="flex items-baseline justify-between">
+          <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <h2 className="text-xl font-semibold">Featured projects</h2>
             <Link
               href="/projects"
@@ -49,7 +49,7 @@ export default function HomePage() {
       {/* Recent posts */}
       {recentPosts.length > 0 && (
         <section className="space-y-3">
-          <div className="flex items-baseline justify-between">
+          <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <h2 className="text-xl font-semibold">Recent posts</h2>
             <Link
               href="/blog"
