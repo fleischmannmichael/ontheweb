@@ -15,11 +15,11 @@ export default function HomePage() {
         <p className="max-w-prose text-lg leading-relaxed text-slate-ink/80">
           I&apos;m an Electrical &amp; Computer Engineering student at TU Munich,
           interested in networking, cybersecurity, and building things that work
-          end to end. Previously I did AI / computer vision research at Goethe
+          end to end. Previously I did AI research at Goethe
           University Frankfurt.
         </p>
         <p className="font-mono text-sm text-slate-ink/60">
-          📍 Munich · ECE @ TUM · Currently:{" "}
+          📍 Frankfurt · soon ECE @ TUM · Currently:{" "}
           <Link href="/now" className="link-accent">
             /now
           </Link>

@@ -80,7 +80,7 @@ const experience: {
 const education = [
   {
     school: "European School RheinMain (ESRM)",
-    program: "International Baccalaureate — Physics & Mathematics",
+    program: "International Baccalaureate — HL Physics & Mathematics",
     date: "Sep 2014 – Jul 2026",
     activities: ["MUN President", "BAC Committee President", "Varsity Rugby"],
   },
