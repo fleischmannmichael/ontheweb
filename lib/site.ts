@@ -6,7 +6,7 @@ export const site = {
   description:
     "ECE student at TU Munich. Networking, cybersecurity, and building things.",
   // Update with your deployed URL once live (used for metadata).
-  url: "https://fleischmannmichael.github.io/ontheweb",
+  url: "https://michaelfleischmann.xyz",
   email: "fleischmannmichaelje@gmail.com",
   github: "https://github.com/fleischmannmichael",
   linkedin: "https://www.linkedin.com/in/michael-fleischmann-970698305/",
