@@ -17,32 +17,26 @@ export default function NowPage() {
           Last updated: {LAST_UPDATED}
         </p>
         <p className="max-w-prose text-slate-ink/70">
-          A snapshot of what I&apos;m focused on right now. Inspired by{" "}
-          <a
-            href="https://nownownow.com/about"
-            target="_blank"
-            rel="noreferrer"
-            className="link-accent"
-          >
-            nownownow.com
-          </a>
-          .
+          A snapshot of what I&apos;m focused on right now.
         </p>
       </header>
 
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">What I&apos;m studying</h2>
         <p className="max-w-prose leading-relaxed text-slate-ink/80">
-          [PLACEHOLDER — e.g. starting the ECE program at TUM, brushing up on
-          signals &amp; systems, working through a networking course.]
+          Working through MIT OpenCourseWare{" "}
+          <span className="font-mono text-sm">18.01</span> (Single Variable
+          Calculus) and <span className="font-mono text-sm">18.06</span> (Linear
+          Algebra) to get ahead of my upcoming TUM coursework.
         </p>
       </section>
 
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">What I&apos;m building</h2>
         <p className="max-w-prose leading-relaxed text-slate-ink/80">
-          [PLACEHOLDER — current side projects, e.g. the drone-swarm project,
-          home lab / networking experiments.]
+          A homelab mini-rack for self-hosting — running my own services,
+          including a self-hosted password manager, and experimenting with
+          networking and security along the way.
         </p>
       </section>
 
@@ -51,7 +45,9 @@ export default function NowPage() {
           What I&apos;m reading / watching
         </h2>
         <p className="max-w-prose leading-relaxed text-slate-ink/80">
-          [PLACEHOLDER — books, papers, talks, courses.]
+          Currently reading <em>Dopamine Nation</em> by Dr. Anna Lembke —
+          a fascinating look at how the brain&apos;s reward system shapes habits
+          and behaviour.
         </p>
       </section>
     </div>

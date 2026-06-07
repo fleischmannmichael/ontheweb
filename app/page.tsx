@@ -24,6 +24,23 @@ export default function HomePage() {
             /now
           </Link>
         </p>
+
+        {/* Call to action */}
+        <div className="flex flex-wrap items-center gap-3 pt-2">
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-cream shadow-sm transition-colors duration-150 hover:bg-accent-hover"
+          >
+            Get in touch
+            <span aria-hidden="true">→</span>
+          </Link>
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 rounded-lg border border-line px-5 py-2.5 text-sm font-medium text-slate-ink transition-colors duration-150 hover:border-accent/50 hover:text-accent"
+          >
+            See my work
+          </Link>
+        </div>
       </section>
 
       {/* Featured projects */}

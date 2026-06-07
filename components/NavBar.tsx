@@ -48,7 +48,7 @@ export function NavBar() {
           href="/"
           className="font-mono text-sm font-medium text-slate-ink hover:text-accent"
         >
-          <span className="text-accent">$</span> {site.name.toLowerCase()}
+          <span className="text-accent">❯</span> {site.name.toLowerCase()}
         </Link>
 
         {/* Desktop / tablet links */}

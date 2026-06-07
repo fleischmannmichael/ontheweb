@@ -26,6 +26,7 @@ export interface ProjectMeta {
   date: string;
   description: string;
   tags: string[];
+  categories: string[];
   github: string;
   demo: string;
   featured: boolean;
@@ -94,6 +95,7 @@ export function getAllProjects(): Project[] {
         date: data.date ?? "",
         description: data.description ?? "",
         tags: data.tags ?? [],
+        categories: data.categories ?? [],
         github: data.github ?? "",
         demo: data.demo ?? "",
         featured: Boolean(data.featured),

@@ -7,9 +7,12 @@ export const site = {
     "ECE student at TU Munich. Networking, cybersecurity, and building things.",
   // Update with your deployed URL once live (used for metadata).
   url: "https://example.com",
-  email: "[EMAIL_PLACEHOLDER]",
-  github: "https://github.com/[USERNAME]",
-  linkedin: "https://www.linkedin.com/in/[USERNAME]",
+  email: "fleischmannmichaelje@gmail.com",
+  github: "https://github.com/fleischmannmichael",
+  linkedin: "https://www.linkedin.com/in/michael-fleischmann-970698305/",
+  // Display handles (without the full URL) for compact link labels.
+  githubHandle: "fleischmannmichael",
+  linkedinHandle: "michael-fleischmann",
 };
 
 export const navLinks = [
