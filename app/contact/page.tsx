@@ -83,7 +83,7 @@ export default function ContactPage() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
           </span>
-          Open to internship opportunities
+          Let&apos;s work together
         </span>
         <h1 className="text-3xl font-bold sm:text-4xl">Let&apos;s connect.</h1>
         <p className="max-w-prose text-lg leading-relaxed text-slate-ink/80">

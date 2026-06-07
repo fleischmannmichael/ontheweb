@@ -29,13 +29,11 @@ type Role = {
 
 const experience: {
   org: string;
-  initials: string;
   duration?: string;
   roles: Role[];
 }[] = [
   {
     org: "BBYO",
-    initials: "BB",
     duration: "1 yr 6 mos",
     roles: [
       {
@@ -61,7 +59,6 @@ const experience: {
   },
   {
     org: "Goethe University Frankfurt",
-    initials: "GU",
     roles: [
       {
         title: "Research Collaborator",
@@ -83,20 +80,11 @@ const experience: {
 const education = [
   {
     school: "European School RheinMain (ESRM)",
-    initials: "ES",
     program: "International Baccalaureate — Physics & Mathematics",
     date: "Sep 2014 – Jul 2026",
     activities: ["MUN President", "BAC Committee President", "Varsity Rugby"],
   },
 ];
-
-function Monogram({ initials }: { initials: string }) {
-  return (
-    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-line bg-accent/10 font-mono text-xs font-medium text-accent">
-      {initials}
-    </span>
-  );
-}
 
 function SkillTag({ children }: { children: React.ReactNode }) {
   return (
@@ -126,6 +114,21 @@ export default function AboutPage() {
         </div>
       </header>
 
+      {/* Skills */}
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold">Skills &amp; tools</h2>
+        <div className="flex flex-wrap gap-2">
+          {skills.map((skill) => (
+            <span
+              key={skill}
+              className="rounded-full border border-line px-3 py-1 font-mono text-xs text-slate-ink/70"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </section>
+
       {/* Experience | Education */}
       <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.6fr_1fr]">
         {/* Experience */}
@@ -134,23 +137,20 @@ export default function AboutPage() {
           <div className="space-y-8">
             {experience.map((company) => (
               <div key={company.org} className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Monogram initials={company.initials} />
-                  <div>
-                    <p className="font-medium text-slate-ink">{company.org}</p>
-                    {company.duration && (
-                      <p className="font-mono text-xs text-slate-ink/50">
-                        {company.duration}
-                      </p>
-                    )}
-                  </div>
+                <div>
+                  <p className="font-medium text-slate-ink">{company.org}</p>
+                  {company.duration && (
+                    <p className="font-mono text-xs text-slate-ink/50">
+                      {company.duration}
+                    </p>
+                  )}
                 </div>
 
                 <ol
                   className={
                     company.roles.length > 1
-                      ? "ml-4 space-y-5 border-l border-line pl-6"
-                      : "ml-4 space-y-5 pl-6"
+                      ? "space-y-5 border-l border-line pl-6"
+                      : "space-y-5"
                   }
                 >
                   {company.roles.map((role) => (
@@ -187,42 +187,20 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold">Education</h2>
           <div className="space-y-8">
             {education.map((edu) => (
-              <div key={edu.school} className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <Monogram initials={edu.initials} />
-                  <p className="font-medium text-slate-ink">{edu.school}</p>
-                </div>
-                <div className="ml-4 space-y-1 pl-6">
-                  <p className="text-sm text-slate-ink/80">{edu.program}</p>
-                  <p className="font-mono text-xs text-slate-ink/50">
-                    {edu.date}
-                  </p>
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {edu.activities.map((activity) => (
-                      <SkillTag key={activity}>{activity}</SkillTag>
-                    ))}
-                  </div>
+              <div key={edu.school} className="space-y-2">
+                <p className="font-medium text-slate-ink">{edu.school}</p>
+                <p className="text-sm text-slate-ink/80">{edu.program}</p>
+                <p className="font-mono text-xs text-slate-ink/50">{edu.date}</p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {edu.activities.map((activity) => (
+                    <SkillTag key={activity}>{activity}</SkillTag>
+                  ))}
                 </div>
               </div>
             ))}
           </div>
         </section>
       </div>
-
-      {/* Skills */}
-      <section className="space-y-4">
-        <h2 className="text-xl font-semibold">Skills &amp; tools</h2>
-        <div className="flex flex-wrap gap-2">
-          {skills.map((skill) => (
-            <span
-              key={skill}
-              className="rounded-full border border-line px-3 py-1 font-mono text-xs text-slate-ink/70"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }
