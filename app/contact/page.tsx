@@ -148,8 +148,8 @@ export default function ContactPage() {
       </div>
 
       <p className="font-mono text-sm text-slate-ink/50">
-        <span className="text-accent">❯</span> based in Munich · usually reply
-        within a day
+        <span className="text-accent">❯</span> based in Frankfurt · usually
+        reply within a day
       </p>
     </div>
   );

@@ -2,15 +2,15 @@
 
 export const site = {
   name: "Michael",
-  title: "Michael — ECE @ TUM",
+  title: "Michael — Incoming ECE Student",
   description:
-    "Incoming ECE student at TU Munich. Networking, cybersecurity, and building things.",
+    "Incoming Electrical & Computer Engineering student. Networking, cybersecurity, and building things.",
   // Update with your deployed URL once live (used for metadata).
   url: "https://michaelfleischmann.xyz",
   email: "fleischmannmichaelje@gmail.com",
   github: "https://github.com/fleischmannmichael",
   linkedin: "https://www.linkedin.com/in/michael-fleischmann-970698305/",
-  cv: "https://docs.google.com/document/d/18DHYgFlZZ4l1G1LdCtzvsGswHqIU6raziwjkuZnBDGw/edit?usp=sharing",
+  cv: "https://drive.google.com/file/d/1o41Ca_MWcS7llixUSKuQjb5EF5g_vawa/view?usp=sharing",
   // Display handles (without the full URL) for compact link labels.
   githubHandle: "fleischmannmichael",
   linkedinHandle: "michael-fleischmann",

@@ -27,7 +27,7 @@ export default function NowPage() {
           Working through MIT OpenCourseWare{" "}
           <span className="font-mono text-sm">18.01</span> (Single Variable
           Calculus) and <span className="font-mono text-sm">18.06</span> (Linear
-          Algebra) to get ahead of my upcoming TUM coursework.
+          Algebra) to get ahead of my upcoming university coursework.
         </p>
       </section>
 

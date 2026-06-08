@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Incoming ECE student at TU Munich with a background in AI research and an interest in networking and security.",
+    "Incoming Electrical & Computer Engineering student with a background in AI research and an interest in networking and security.",
 };
 
 const skills = [
@@ -103,9 +103,9 @@ export default function AboutPage() {
         <div className="max-w-prose space-y-4 leading-relaxed text-slate-ink/80">
           <p>
             I&apos;m Michael, an incoming Electrical &amp; Computer Engineering
-            student at TU Munich. Before that I worked as a research collaborator
-            on AI / user-experience design at Goethe University Frankfurt, and
-            led BBYO Germany as National President.
+            student. Before that I worked as a research collaborator on AI /
+            user-experience design at Goethe University Frankfurt, and led BBYO
+            Germany as National President.
           </p>
           <p>
             My interests sit at the intersection of networking, cybersecurity,
