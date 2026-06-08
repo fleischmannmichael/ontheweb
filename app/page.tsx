@@ -13,10 +13,10 @@ export default function HomePage() {
       <section className="space-y-5">
         <h1 className="text-4xl font-bold sm:text-5xl">Hi, I&apos;m Michael.</h1>
         <p className="max-w-prose text-lg leading-relaxed text-slate-ink/80">
-          I&apos;m an Electrical &amp; Computer Engineering student at TU Munich,
-          interested in networking, cybersecurity, and building things that work
-          end to end. Previously I did AI research at Goethe
-          University Frankfurt.
+          I&apos;m an incoming Electrical &amp; Computer Engineering student at TU
+          Munich, interested in networking, cybersecurity, and building things
+          that work end to end. Previously I did AI research at Goethe University
+          Frankfurt.
         </p>
         <p className="font-mono text-sm text-slate-ink/60">
           📍 Frankfurt · soon ECE @ TUM · Currently:{" "}

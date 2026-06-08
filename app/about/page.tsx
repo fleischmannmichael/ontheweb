@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "ECE student at TU Munich with a background in AI research and an interest in networking and security.",
+    "Incoming ECE student at TU Munich with a background in AI research and an interest in networking and security.",
 };
 
 const skills = [
@@ -112,6 +113,15 @@ export default function AboutPage() {
             and how to make that communication robust and secure.
           </p>
         </div>
+        <a
+          href={site.cv}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 rounded-lg border border-line px-4 py-2 text-sm font-medium text-slate-ink transition-colors duration-150 hover:border-accent/50 hover:text-accent"
+        >
+          View résumé / CV
+          <span aria-hidden="true">→</span>
+        </a>
       </header>
 
       {/* Skills */}
