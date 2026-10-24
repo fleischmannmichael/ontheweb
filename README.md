@@ -89,63 +89,7 @@ featured: true            # featured projects appear on the home page
 
 Longer project write-up (currently unused by the grid, available for a future
 project detail page).
-```
-
-## Obsidian workflow
-
-The `content/` folder is plain, flat Markdown with YAML frontmatter only — no
-Obsidian-specific syntax is required, so it doubles as an
-[Obsidian](https://obsidian.md/) vault.
-
-To write posts seamlessly in Obsidian:
-
-1. Open Obsidian → **Open folder as vault** → select this repo's
-   `content/posts` folder (or the whole `content/` folder).
-2. Set a default template with the frontmatter fields above (optional, via the
-   Templates core plugin).
-3. Write `.md` or `.mdx` files. Both extensions are picked up by the loader.
-4. Save → `git commit` → push. The site rebuilds with your new content.
-
-Wiki-links (`[[...]]`) and other Obsidian-only syntax are **not** rendered by
-the site, so stick to standard Markdown links if you want them to work on the
-web.
-
-## Customizing
-
-- **Name, links, email, nav:** edit `lib/site.ts`. Replace
-  `[EMAIL_PLACEHOLDER]`, `[USERNAME]` (GitHub/LinkedIn), and the `url`.
-- **Colors & fonts:** `tailwind.config.ts`.
-- **Now / About copy:** edit the `[PLACEHOLDER]` text directly in
-  `app/now/page.tsx` and `app/about/page.tsx`.
-- **`/now` last-updated date:** the `LAST_UPDATED` constant in
-  `app/now/page.tsx`.
-
-## Deploying
-
-The site is configured for **static export** (`output: "export"` in
-`next.config.mjs`), so `npm run build` emits a fully static site into `./out`
-that any static host can serve.
-
-### GitHub Pages (current setup)
-
-A workflow at `.github/workflows/deploy.yml` builds and deploys to GitHub Pages
-on every push to `main`.
-
-One-time setup in the repo:
-
-1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
-   (The workflow also attempts to enable this automatically.)
-2. Push to `main`. Watch the run under the **Actions** tab.
-3. The site goes live at `https://<user>.github.io/<repo>/`
-   (here: <https://fleischmannmichael.github.io/ontheweb/>).
-
-Because it's a *project* site served from `/<repo>`, the workflow builds with
-`NEXT_PUBLIC_BASE_PATH=/<repo>` so all asset and link paths are prefixed
-correctly. `public/.nojekyll` ensures the `_next` folder isn't stripped by
-Pages. If you rename the repo, the base path follows automatically (it's
-derived from the repo name in the workflow).
-
-### Vercel (alternative)
+``
 
 Import the repo at [vercel.com/new](https://vercel.com/new); it auto-detects
 Next.js. On Vercel you don't need the base path — leave `NEXT_PUBLIC_BASE_PATH`
